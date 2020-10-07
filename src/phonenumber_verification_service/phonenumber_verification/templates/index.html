@@ -1,7 +1,25 @@
 {% extends "base.html" %} 
-
 {% block content %}
 
-    <h1>Index page</h1>
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <div class="form-group">
+                <legend>Phonenumber Verification Service</legend>
+                <p style="margin-top:0.5cm;">Use the form below to request a verifiable credential about your phonenumber.</p>
+                <div class="content-section">
+                    {{ form.as_p }}
+                    <small>We'll never share your phone number with anyone else.</small>
+
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary" />
+        </fieldset>
+
+    </form>
+
+</div>
 
 {% endblock content %}
